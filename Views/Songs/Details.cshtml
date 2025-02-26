@@ -1,0 +1,23 @@
+﻿@model GrammyAwards.Models.Song
+
+@{
+    ViewData["Title"] = "Song Details";
+}
+
+<h1>@Model.Title</h1>
+
+<div>
+    <p><strong>Artist:</strong> @Model.Artist?.Name</p>
+    <p><strong>Awards:</strong></p>
+    <ul>
+        @foreach (var award in Model.Awards ?? new List<Award>())
+        {
+            <li>@award.Category</li>
+        }
+    </ul>
+</div>
+
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

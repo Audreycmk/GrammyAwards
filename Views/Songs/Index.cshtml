@@ -1,0 +1,126 @@
+﻿@model IEnumerable<GrammyAwards.Models.Song>
+
+@{
+    ViewData["Title"] = "Songs";
+}
+
+<head>
+    <style>
+        /* Grammy Light Theme */
+        body {
+            background: #f9f9f9; /* Light background */
+            color: #2b2b2b; /* Dark text */
+            font-family: 'Poppins', sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 3rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 30px;
+            background: linear-gradient(90deg, #ffd700, #ffa500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .btn-primary {
+            background-color: #ffd700; /* Grammy Gold */
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: background 0.3s;
+            text-decoration: none; /* Remove underline */
+            display: inline-block; /* Ensure proper button styling */
+            color: #2b2b2b;
+        }
+
+        .btn-primary:hover {
+            background-color: #b8860b; /* Darker Gold */
+            color: #fff;
+        }
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background: #fff; /* White table background */
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        thead {
+            background: #f0f0f0; /* Light gray header */
+            color: #2b2b2b; /* Dark text */
+            text-transform: uppercase;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: center;
+        }
+
+        tbody tr {
+            transition: background 0.3s ease;
+        }
+
+        tbody tr:hover {
+            background: rgba(255, 215, 0, 0.1); /* Light gold shimmer */
+        }
+
+        .btn-sm {
+            margin: 0 5px;
+            padding: 5px 10px;
+            border-radius: 20px;
+            transition: background 0.3s;
+            text-decoration: none; /* Remove underline */
+            display: inline-block; /* Ensure proper button styling */
+            color: white;
+        }
+
+        .btn-info { background: #17a2b8; }
+        .btn-warning { background: #ff9800; }
+        .btn-danger { background: #dc3545; }
+
+        .btn-info:hover { background: #138496; }
+        .btn-warning:hover { background: #e68900; }
+        .btn-danger:hover { background: #c82333; }
+    </style>
+</head>
+
+<h1>Songs</h1>
+
+<p>
+    <a asp-action="Create" class="btn-primary">Create New</a>
+</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Album</th>
+            <th>Release Year</th>
+            <th>Artist</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var song in Model)
+        {
+            <tr>
+                <td>@song.Title</td>
+                <td>@song.Album</td>
+                <td>@song.ReleaseYear</td>
+                <td>@song.Artist?.Name</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@song.Id" class="btn btn-info btn-sm">Details</a>
+                    <a asp-action="Edit" asp-route-id="@song.Id" class="btn btn-warning btn-sm">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@song.Id" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

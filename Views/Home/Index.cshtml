@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "Grammy Awards";
+}
+
+<div class="text-center">
+    <h1 class="display-4">🎵 Grammy Awards 2025 🎶</h1>
+    <img src="~/images/002.jpg" alt="Grammy Award" width="200" class="my-4">
+
+    <div class="mt-4">
+        <a class="btn btn-warning btn-lg" href="@Url.Action("Index", "Artists")">Explore Artists</a>
+        <a class="btn btn-danger btn-lg" href="@Url.Action("Index", "Songs")">View Songs</a>
+    </div>
+
+    <footer class="mt-5">
+        <p>Learn more about <a href="https://learn.microsoft.com/aspnet/core" target="_blank">ASP.NET Core</a>.</p>
+            <div class="container">
+                
+                <div class="social-icons text-center">
+                    <a href="#" class="ms-2"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="ms-2"><i class="bi bi-twitter"></i></a>
+                    <a href="#" class="ms-2"><i class="bi bi-instagram"></i></a>
+                </div>
+            </div>
+    </footer>
+</div>

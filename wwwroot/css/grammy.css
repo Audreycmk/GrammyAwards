@@ -1,0 +1,65 @@
+﻿/* Global Styling */
+body {
+    background: linear-gradient(to right, #000, #111);
+    color: #fff;
+    font-family: 'Georgia', serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+.grammy-header {
+    background: white;
+    padding: 20px;
+    border-bottom: 3px solid gold;
+}
+
+.grammy-logo {
+    width: 120px;
+    height: auto;
+}
+
+/* Content */
+.content {
+    padding: 80px 20px;
+}
+
+h1, h2 {
+    color: gold;
+    text-shadow: 2px 2px 5px rgba(255, 215, 0, 0.8);
+}
+
+/* Button */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background: gold;
+    color: #000;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: 0.3s ease-in-out;
+}
+
+    .btn:hover {
+        background: #e4a800;
+        transform: scale(1.05);
+    }
+
+/* Adjusted Logo Styling */
+.grammy-logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.7rem; /* Slightly larger text */
+    font-weight: bold;
+    color: gold !important;
+    text-decoration: none;
+}
+
+    .grammy-logo img {
+        height: 60px; /* Increased height */
+        width: auto; /* Maintain aspect ratio */
+        margin-right: 10px;
+    }

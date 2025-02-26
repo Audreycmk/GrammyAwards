@@ -1,0 +1,17 @@
+﻿@model GrammyAwards.Models.Award
+
+@{
+    ViewData["Title"] = "Award Details";
+}
+
+<h1>@Model.Category</h1>
+
+<div>
+    <p><strong>Song:</strong> @Model.Song?.Title</p>
+    <p><strong>Artist:</strong> @Model.Song?.Artist?.Name</p>
+</div>
+
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
